@@ -1,11 +1,17 @@
 # Active-Learning-For-Object-Detection
-Active Learning For Object Detection on KITTI using MC Dropout
+Active Learning For Object Detection 
+
+Computes informativeness of a single object detection using MC Dropout and DBSCAN. 
+After computing the model’s uncertainty per detection, it aggregates the individual 
+uncertainty values in two different ways. The first metric selects the images with 
+crowded scenes, while the other is neutral to the number of detections in an image. 
+Selection strategy: maximizing uncertainty.
+Dataset: KITTI
 
 1. Create tfrecords: /object_detection/dataset_tools/
    prepare_kitti_splits.py
    create_kitti_tfrecord_init_and_test.py
    create_kitti_tfrecord_random.py
-   
 
 2. Train & evaluate: /object_detection/legacy/train.py and  /object_detection/legacy/eval.py
 
